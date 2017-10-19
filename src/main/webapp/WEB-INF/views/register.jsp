@@ -1,60 +1,56 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
-
-		<head>
-  			<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  			<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<head>
+			<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  			<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
   			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-  			
-  			<title CLASS="STRONG">project</title>
-		</head>
-
+ 
+			<title>Registration Page</title>
+	</head>
 	<body>
-	  
-	  	<nav id ="navbar-red" class="navbar-inverse"role="navigation">
-			
-			<div class="container-fluid">
-				<ul="nav navbar-nav">
-					<button type="button"class="navbar-toggle collapsed datatoggle="collapse"data target="bs-example-nav">
-						<span class="sr-only">toggle navigation</span>
-						<span class="icon_bar"></span>
-						<span class="icon_bar"></span>
-						<span class="icon_bar"></span>
-					</button>
-				</ul>
-			</div>
+			<jsp:include page="header.jsp"></jsp:include>
 		
-			<div class="collapse navbar-collapse"id=bs-example-nav>
-			
-				<ul class="nav navbar-nav">
-			
-					<li><a href="#"><i class="fa fa-home" aria-hidden="true"></i>HOME</a></li>
-					<li><a href="login"><i class="fa fa-sign-in" aria-hidden="true"></i>LOGIN</a></li>
-					<li><a href="#">CUSTOMER CARE</a></li>
-					<li><a href="registration">Register</a></li>
-					<li><a href="#">PRODUCT LIST</a></li>
-					<li class="dropdown"><a href="#" class="drop-down-toggle" data-toggle="dropdown">category<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#"	>link1</a></li>
-						<li><a href="#"	>link2</a></li>
-						<li><a href="#"	>link3</a></li>
-						<li class ="divides"></li>
-						<li><a href="#">seperate link</a></li>
-						
-						<li class ="divides"></li>
-						<li><a href="#">another link</a></li>
-						
-					</ul>
-			
-	  			</ul>
-	  		</div>
-	  	</nav>
-	  	
-
-	</body>
+<html>
+    <head>
+    </head>
+    <body>
+        <h3>Welcome, Enter The User Details</h3>
+        <form:form method="POST" action="saveUser" modelAttribute="user">
+             <table>
+                <tr>
+                    <td><form:label path="username">UserName</form:label></td>
+                    <td><form:input path="username"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="email">Email</form:label></td>
+                    <td><form:input path="email"/></td>
+                </tr>
+                
+                      <tr>
+                    <td><form:label path="password">Password</form:label></td>
+                    <td><form:input path="password"/></td>
+                </tr>
+                
+              
+                
+                <tr>
+                    <td><form:label path="contact">Contact Number</form:label></td>
+                    <td><form:input path="contact"/></td>
+                </tr>
+                
+                
+                 <tr>
+                    <td><form:label path="address">Address</form:label></td>
+                    <td><form:input path="address"/></td>
+                </tr>
+               
+                
+                 <tr>
+                    <td><input type="submit" value="Submit"/></td>
+                </tr>
+            </table>
+        </form:form>
+    </body>
 </html>

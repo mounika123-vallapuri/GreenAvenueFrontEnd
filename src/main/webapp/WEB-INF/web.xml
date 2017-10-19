@@ -1,11 +1,11 @@
-<web-app id = "GreenAvenue" version = "2.4"
+<web-app id = "WebApp_ID" version = "2.4"
    xmlns = "http://java.sun.com/xml/ns/j2ee" 
    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation = "http://java.sun.com/xml/ns/j2ee 
    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
   
-<display-name>Archetype Created Web Application</display-name>
+<display-name>GreenAvenueFrontEnd</display-name>
 
 
   <servlet>
@@ -15,7 +15,17 @@
         </servlet-class>
         <load-on-startup>1</load-on-startup>
   </servlet>
-
+  
+<!-- <filter>
+	<filter-name>springSecurityFilterChain</filter-name>
+	<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>SpringSecurityFilterChain</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+  
+ -->
   <servlet-mapping>
  	<servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
@@ -25,9 +35,9 @@
     <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
 </context-param>
 
-
 <!-- Creates the Spring Container shared by all Servlets and Filters -->
 <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 </listener>
+
 </web-app>
