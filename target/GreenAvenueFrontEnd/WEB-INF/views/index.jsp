@@ -7,7 +7,7 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-<div class="container-fluid">
+<div class="container">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -47,6 +47,6 @@
 </div>
 
 
-
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

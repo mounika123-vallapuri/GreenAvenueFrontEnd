@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Product Page</title>
 </head>
 <body>
 		<form:form action="InsertProduct" modelAttribute="product" enctype="multipart/form-data">
@@ -45,7 +45,11 @@
 	</tr>
 	<tr>
 		<td>Supplier</td>
-		<td><form:input path="supplierId"/></td>
+		<td>
+		<form:select path="supplierId">
+				<form:option value="0" label="---Select---"/>
+				<form:options items="${supplierList}"/>
+		</form:select>
 	</tr>
 	<tr>
 		<td>Product Image</td>

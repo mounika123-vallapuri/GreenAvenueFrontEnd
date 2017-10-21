@@ -49,7 +49,7 @@ public class CategoryController
      
     @RequestMapping(value="updateCategory/{catId}",method=RequestMethod.GET)
     public String updateCategory(@PathVariable("catId") int catId,Model m)
-    {
+     {
         Category category=categoryDAO.getCategory(catId);
         m.addAttribute(category);
          

@@ -46,9 +46,9 @@
 </tr>
 <c:forEach items="${supplierList}" var="supplier">
 	<tr bgcolor="brown">
-		<td>${supplier.SupId}</td>
-		<td>${supplier.SupName}</td>
-		<td>${supplier.SupDesc}</td>
+		<td>${supplier.supId}</td>
+		<td>${supplier.supName}</td>
+		<td>${supplier.supDesc}</td>
 		<td>
 			<a href="<c:url value="deleteSupplier/${supplier.supId}"/>">DELETE</a>
 			<a href="<c:url value="updateSupplier/${supplier.supId}"/>">UPDATE</a>

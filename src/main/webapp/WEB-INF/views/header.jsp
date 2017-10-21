@@ -27,18 +27,21 @@
 						<span class="icon_bar"></span>
 					</button>
 				</ul>
+				
 			</div>
 		
 			<div class="collapse navbar-collapse"id=bs-example-nav>
+			<a class="navbar-brand" href="#">Green-Avenue</a>
 			
-				<ul class="nav navbar-nav">
-			
+				<ul class="nav navbar-nav navbar-right">
+					
+					
 					<li><a href="Home"><i class="fa fa-home" aria-hidden="true"></i>HOME</a></li>
 					<li><a href="Login"><i class="fa fa-sign-in" aria-hidden="true"></i>LOGIN</a></li>
 					<li><a href="category">Category</a></li>
 					<li><a href="supplier">Supplier</a></li>
 					<li><a href="register">Register</a></li>
-					<li><a href="product">PRODUCT</a></li>
+					<li><a href="product">Product</a></li>
 						
 				</ul>
 	  		</div>

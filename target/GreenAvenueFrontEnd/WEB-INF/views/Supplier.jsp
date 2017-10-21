@@ -8,8 +8,7 @@
 <title>supplier</title>
 </head>
 	<body>
-	   <jsp:include page="header.jsp"></jsp:include>
-			<!-- <form action="AddSupplier" method="post">-->
+	   	<!-- <form action="AddSupplier" method="post">-->
 
 			<form:form action="AddSupplier" modelAttribute="supplier">
 			<table align="center" cellspacing="2">
@@ -18,27 +17,28 @@
 			</tr>
 			
 			<tr>
-					<td>Supplier ID</td>
-					<!--<td><input type="text" name="SupId"/></td>-->
-					<td><form:input path="SupId"/></td>
+				<td>Supplier Id</td>
+				<!-- <td><input type="text" name="supId"/></td> -->
+				<td><form:input path="supId"/></td>
 			</tr>
+			
 	
 			<tr>
 				<td>Supplier Name</td>
-				<!-- <td><input type="text" name="SupName"/></td> -->
-				<td><form:input path="SupName"/></td>
+				<!-- <td><input type="text" name="supName"/></td> -->
+				<td><form:input path="supName"/></td>
 			</tr>
 			
 			<tr>
 				<td>Supplier Desc</td>
-				<!-- <td><input type="text" name="SupName"/></td> -->
-				<td><form:input path="SupDesc"/></td>
+				<!-- <td><input type="text" name="SupDescription"/></td> -->
+				<td><form:input path="supDesc"/></td>
 			</tr>
 				
 			<tr>
 				<td>Supplier Address</td>
 				<!-- <td><input type="text" name="SupAddress"/></td> -->
-				<td><form:input path="SupAddress"/></td>
+				<td><form:input path="supAddress"/></td>
 			</tr>
 	
 		<tr>
@@ -59,14 +59,14 @@
 	</tr>
 	
 	<c:forEach items="${supplierList}" var="supplier">
-		<tr bgcolor="green">
+		<tr bgcolor="blue">
 			<td>${supplier.supId}</td>
 			<td>${supplier.supName}</td>
 			<td>${supplier.supDesc}</td>
 			<td>${supplier.supAddress}</td>
 			<td>
 			
-				<a href="<c:url value="deleteSupplier/${supplier.supId}"/>">DELETE</a>/
+				<a href="<c:url value="deleteSupplier/${supplier.supId}"/>">DELETE</a>
 				<a href="<c:url value="updateSupplier/${supplier.supId}"/>">UPDATE</a>
 			</td>
 		</tr>
