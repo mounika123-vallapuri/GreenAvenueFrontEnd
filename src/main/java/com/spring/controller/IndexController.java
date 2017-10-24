@@ -25,7 +25,7 @@ public class IndexController
 
 	}
 	
-		@RequestMapping("/registration")
+		@RequestMapping("/register")
 		public String goToRegisterPage(@ModelAttribute("user") User user,Model model)
 		{
 			

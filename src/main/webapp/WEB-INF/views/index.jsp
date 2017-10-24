@@ -20,17 +20,17 @@
   <div class="carousel-inner">
     <div class="item active">
       <img class="img-rounded" class="img-responsive center-block"
-      src="resources/images/1.jpg/" style="width:100%">
+      src="resources/images/IMG_2017-08-26_18-55-42_1503755086987.jpg/" style="width:100%">
     </div>
 
     <div class="item">
     <img class="img-rounded" class="img-responsive center-block"
-      src="resources/images/2.jpg/" style="width:100%">
+      src="resources/images/IMG_2017-08-26_18-55-42_1503755083454.jpg/" style="width:100%">
     </div>
 
     <div class="item">
     <img class="img-rounded" class="img-responsive center-block"
-      src="resources/images/3.jpg/" style="width:100%">
+      src="resources/images/IMG_2017-08-26_18-55-42_1503755084310.jpg/" style="width:100%">
     </div>
 
   </div>

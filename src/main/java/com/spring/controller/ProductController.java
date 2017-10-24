@@ -1,10 +1,10 @@
 package com.spring.controller;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,20 +23,17 @@ import com.spring.model.Category;
 import com.spring.model.Product;
 import com.spring.model.Supplier;
 
-
 @Controller
 public class ProductController {
 
 	@Autowired
-	ProductDAO productDao;
+	ProductDAO productDAO;
 	
 	@Autowired
 	CategoryDAO categoryDAO;
 	
 	@Autowired
 	SupplierDAO supplierDAO;
-
-	
 	
 	@RequestMapping(value="product",method=RequestMethod.GET)
 	public String showProduct(Model m)
@@ -45,7 +42,7 @@ public class ProductController {
 		m.addAttribute(product);
 		
 		m.addAttribute("categoryList",this.getCategories());
-		m.addAttribute("supplierList",this.getSuppliers());
+		m.addAttribute("supplierList", this.getSuppliers());
 		
 		return "Product";
 	}
@@ -60,8 +57,11 @@ public class ProductController {
 			categoriesList.put(category.getCatId(),category.getCatName());
 		}
 		
-		return categoriesList;
+		return categoriesList;		
 	}
+
+	
+		
 	
 	public LinkedHashMap<Integer,String> getSuppliers()
 	{
@@ -76,50 +76,19 @@ public class ProductController {
 		return suppliersList;
 	}
 	
-	
-	@RequestMapping(value="InsertProduct",method=RequestMethod.POST)
-	public String insertProduct(@ModelAttribute("product")Product product,@RequestParam("pimage")MultipartFile fileDetail,Model m)
-	{
+	@RequestMapping(value="InsertProduct",method = RequestMethod.POST)
+			
+	public String addItem(@ModelAttribute("product") Product product,@RequestParam("file")MultipartFile file,HttpServletRequest request) throws IOException{
+		product.setImage(file.getBytes());
+		this.productDAO.addProduct(product);
+		return "redirect:/product";
 		
-		productDao.addProduct(product);
-		
-		String path="file:///D:/niit%20project/GreenAvenueFrontEnd/src/main/webapp/resources/images";
-		
-		String totalFileWithPath=path+String.valueOf(product.getProductId())+".jpg";
-		
-		File productImage=new File(totalFileWithPath);
-		
-		if(!fileDetail.isEmpty())
-		{
-			try
-			{
-				byte fileBuffer[]=fileDetail.getBytes();
-				FileOutputStream fos=new FileOutputStream(productImage);
-				BufferedOutputStream bs=new BufferedOutputStream(fos);
-				bs.write(fileBuffer);
-				bs.close();
-			}
-			catch(Exception e)
-			{
-				m.addAttribute("error",e.getMessage());
-			}
-		}
-		else
-		{
-			m.addAttribute("error","Problem in File Uploading");
-		}
-		
-		Product product1=new Product();
-		m.addAttribute(product1);
-		
-		return "Product";
 	}
-	
 	
 	@RequestMapping(value="userHome")
 	public String showProducts(Model m)
 	{
-		List<Product> listProducts=productDao.retrieveProducts();
+		List<Product> listProducts=productDAO.retrieveProducts();
 		m.addAttribute("productList",listProducts);
 		
 		return "UserHome";
@@ -128,7 +97,7 @@ public class ProductController {
 	@RequestMapping(value="productDesc/{productId}")
 	public String showProductDesc(@PathVariable("productId")int productId,Model m)
 	{
-		Product product=productDao.getProduct(productId);
+		Product product=productDAO.getProduct(productId);
 		m.addAttribute("product",product);
 		return "ProductDesc";
 	}

@@ -37,7 +37,7 @@
 					
 					
 					<li><a href="Home"><i class="fa fa-home" aria-hidden="true"></i>HOME</a></li>
-					<li><a href="Login"><i class="fa fa-sign-in" aria-hidden="true"></i>LOGIN</a></li>
+					<li><a href="login"><i class="fa fa-sign-in" aria-hidden="true"></i>LOGIN</a></li>
 					<li><a href="category">Category</a></li>
 					<li><a href="supplier">Supplier</a></li>
 					<li><a href="register">Register</a></li>

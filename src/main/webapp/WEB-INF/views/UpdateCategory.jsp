@@ -11,7 +11,7 @@
 
 
 
-<form:form action="${pageContext.request.contextPath}/UpdateCategory" modelAttribute="category" method="post">
+<form:form action="${pageContext.request.contextPath}/UpdateCategory" modelAttribute="category" method="POST">
 
 <table>
 	<tr>
