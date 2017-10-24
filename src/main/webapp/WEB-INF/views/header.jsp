@@ -40,7 +40,7 @@
 					<li><a href="login"><i class="fa fa-sign-in" aria-hidden="true"></i>LOGIN</a></li>
 					<li><a href="category">Category</a></li>
 					<li><a href="supplier">Supplier</a></li>
-					<li><a href="register">Register</a></li>
+					<li><a href="registeration">Register</a></li>
 					<li><a href="product">Product</a></li>
 						
 				</ul>

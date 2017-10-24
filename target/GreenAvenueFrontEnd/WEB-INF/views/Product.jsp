@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Product Page</title>
+<title>product</title>
 </head>
 <body background="${pageContext.request.contextPath}/resources/images/Full-hd-Nature-Backgrounds-Free-Download.jpg">
-		<form:form action="InsertProduct" modelAttribute="product" enctype="multipart/form-data">
+		<form:form action="InsertProduct" modelAttribute="product" enctype="multipart/form-data" method="post">
 
 <table align="center">
 	<tr>
@@ -39,56 +39,28 @@
 			</form:select>
 		</td>
 	</tr>
+
 	<tr>
 		<td>Supplier</td>
 		<td>
-		<form:select path="supId">
+			<form:select path="supplierId">
 				<form:option value="0" label="---Select---"/>
 				<form:options items="${supplierList}"/>
-		</form:select>
+			</form:select>
+		</td>
 	</tr>
 	<tr>
 		<td>Product Image</td>
 		<td><input type="file" name="file"/></td>
-	</tr>
-
-			<td colspan="2">
+	</tr> 
+	<tr>
+		<td colspan="2">
 			<center><input type="submit" value="Insert"/></center>
 		</td>
 	</tr>
 	
 </table>
 </form:form>
-<!-- -
-<table cellspacing="2" align="center">
-	<tr bgcolor="blue">
-		<td>Product ID</td>
-		<td>Product Name</td>
-		<td>Product Description</td>
-		<td>Product Stock</td>
-		<td>Product Price</td>
-		<td>Product Image</td>
-		<td>Category</td>
-		<td>Supplier</td>
-		<td>Operation</td>
-	</tr>
-	
-	<c:forEach items="${productList}" var="category">
-		<tr bgcolor="pink">
-			<td>${product.productId}</td>
-			<td>${product.productName}</td>
-			<td>${product.productDesc}</td>
-			<td>${product.stock}</td>
-			<td>${product.price}</td>
-			<td>${category.catName}</td>
-			<td>${supplier.supName}</td>
-			<td>${product.image}</td>
-			<td>
-				<a href="<c:url value="deleteProduct/${product.productId}"/>">DELETE</a>
-				<a href="<c:url value="updateProduct/${product.productId}"/>">UPDATE</a>
-			</td>
-		</tr>
-	</c:forEach>
- -->
+
 </body>
 </html>

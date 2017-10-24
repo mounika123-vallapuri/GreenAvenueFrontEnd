@@ -24,16 +24,17 @@ import com.spring.model.Product;
 import com.spring.model.Supplier;
 
 @Controller
-public class ProductController {
+public class ProductController
+{
 
 	@Autowired
-	ProductDAO productDAO;
+	ProductDAO productDao;
 	
 	@Autowired
-	CategoryDAO categoryDAO;
+	CategoryDAO categoryDao;
 	
 	@Autowired
-	SupplierDAO supplierDAO;
+	SupplierDAO supplierDao;
 	
 	@RequestMapping(value="product",method=RequestMethod.GET)
 	public String showProduct(Model m)
@@ -49,7 +50,7 @@ public class ProductController {
 	
 	public LinkedHashMap<Integer,String> getCategories()
 	{
-		List<Category> listCategories=categoryDAO.retrieveCategory();
+		List<Category> listCategories=categoryDao.retrieveCategory();
 		LinkedHashMap<Integer,String> categoriesList=new LinkedHashMap<Integer,String>();
 		
 		for(Category category:listCategories)
@@ -65,7 +66,7 @@ public class ProductController {
 	
 	public LinkedHashMap<Integer,String> getSuppliers()
 	{
-		List<Supplier> listSuppliers=supplierDAO.retrieveSupplier();
+		List<Supplier> listSuppliers=supplierDao.retrieveSupplier();
 		LinkedHashMap<Integer,String> suppliersList=new LinkedHashMap<Integer,String>();
 		
 		for(Supplier supplier:listSuppliers)
@@ -77,18 +78,19 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="InsertProduct",method = RequestMethod.POST)
-			
-	public String addItem(@ModelAttribute("product") Product product,@RequestParam("file")MultipartFile file,HttpServletRequest request) throws IOException{
-		product.setImage(file.getBytes());
-		this.productDAO.addProduct(product);
-		return "redirect:/product";
+
+	public String addItem(@ModelAttribute("product") Product p,@RequestParam("file") MultipartFile file,HttpServletRequest request) throws IOException
+	{
+		p.setImage(file.getBytes());
+		this.productDao.addProduct(p);
+		return "Product";
 		
 	}
 	
 	@RequestMapping(value="userHome")
 	public String showProducts(Model m)
 	{
-		List<Product> listProducts=productDAO.retrieveProducts();
+		List<Product> listProducts=productDao.retrieveProduct();
 		m.addAttribute("productList",listProducts);
 		
 		return "UserHome";
@@ -97,8 +99,8 @@ public class ProductController {
 	@RequestMapping(value="productDesc/{productId}")
 	public String showProductDesc(@PathVariable("productId")int productId,Model m)
 	{
-		Product product=productDAO.getProduct(productId);
-		m.addAttribute("product",product);
+		Product product=productDao.getProduct(productId);
+		m.addAttribute("Product",product);
 		return "ProductDesc";
 	}
 

@@ -16,24 +16,23 @@ import com.spring.dao.ProductDAO;
 import com.spring.model.Product;
 
 @Controller
-public class ImageController {
-
-
-	
+public class ImageController 
+{
 	@Autowired
-	ProductDAO productDAO;
+	ProductDAO productDao;
 	
 	@RequestMapping(value = "myImage/imageDisplay", method = RequestMethod.GET)
-	  public void showImage(@RequestParam("productId") int productId, HttpServletResponse response,HttpServletRequest request) 
+	  public void showImage(@RequestParam("id") int id, HttpServletResponse response,HttpServletRequest request) 
 			  throws ServletException, IOException{
 		
-		System.out.println(productId);
-		Product item = productDAO.getItem(productId);
-		System.out.println(productId);
+		System.out.println(id);
+		Product item = productDao.getItem(id);
+		System.out.println(id);
 		response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
 		response.getOutputStream().write(item.getImage());
 		
 		System.out.println("Image is");
 	
 		response.getOutputStream().close();
-}}
+}
+	}
