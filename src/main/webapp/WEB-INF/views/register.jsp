@@ -9,7 +9,7 @@
  
 			<title>Registration Page</title>
 	</head>
-	<body>
+	<body background="${pageContext.request.contextPath}/resources/images/Maldives-Summer-Wallpaper-HD.jpg">
 			<jsp:include page="header.jsp"></jsp:include>
 		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
@@ -56,5 +56,5 @@
         </form:form>
 <center>
     </body>
-    <jsp:include page="footer.jsp"></jsp:include>
+    
 </html></html>

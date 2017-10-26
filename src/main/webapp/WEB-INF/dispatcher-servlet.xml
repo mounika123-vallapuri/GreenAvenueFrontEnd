@@ -22,9 +22,11 @@
 
     <mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 
-    <bean id="multipartresolver" class = "org.springframework.web.multipart.commons.CommonsMultipartResolver">
-      <property name = "maxUploadSize" value = "2000000" />
-      </bean>
+    <!-- one of the properties available; the maximum file size in bytes -->
+    <property name="maxUploadSize" value="200000"/>
+
+</bean>
         	
    	</beans>

@@ -9,13 +9,14 @@
  
 			<title>Registration Page</title>
 	</head>
-	<body>
+	<body background="${pageContext.request.contextPath}/resources/images/Maldives-Summer-Wallpaper-HD.jpg">
 			<jsp:include page="header.jsp"></jsp:include>
 		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
     <head>
     </head>
     <body>
+    <center>
         <h3>Welcome, Enter The User Details</h3>
         <form:form method="POST" action="saveUser" modelAttribute="user">
              <table>
@@ -53,5 +54,7 @@
                 </tr>
             </table>
         </form:form>
+<center>
     </body>
+    
 </html></html>

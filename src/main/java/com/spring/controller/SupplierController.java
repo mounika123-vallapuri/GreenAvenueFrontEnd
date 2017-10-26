@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.dao.SupplierDAO;
-import com.spring.model.Category;
 import com.spring.model.Supplier;
 
 
