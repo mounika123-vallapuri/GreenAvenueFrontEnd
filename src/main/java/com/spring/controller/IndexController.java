@@ -21,7 +21,7 @@ public class IndexController
 	  @RequestMapping(value="/",method=RequestMethod.GET)
 	public String showIndex() 
 	{
-		return "index";
+		return "welcome";
 
 	}
 	
@@ -43,7 +43,7 @@ public class IndexController
 			user.setRole("ROLE_USER");
 			user.setEnabled(true);
 			userDAO.saveUser(user);
-			return "index";
+			return "welcome";
 		}
 
 
