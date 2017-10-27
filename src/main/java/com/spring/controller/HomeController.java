@@ -58,6 +58,7 @@ public class HomeController {
 	  	@SuppressWarnings("unchecked")
 		@RequestMapping(value = "/login_session_attributes")
 		public String login_session_attributes(HttpSession session,Model model) {
+	  		
 			String email = SecurityContextHolder.getContext().getAuthentication().getName();
 			
 			User user = userDAO.get(email);

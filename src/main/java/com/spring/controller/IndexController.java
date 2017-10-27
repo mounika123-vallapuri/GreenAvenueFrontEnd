@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.spring.dao.ProductDAO;
 import com.spring.dao.UserDAO;
 import com.spring.model.User;
 
@@ -18,9 +19,15 @@ public class IndexController
 	
 	@Autowired
 	private UserDAO userDAO;
-	  @RequestMapping(value="/",method=RequestMethod.GET)
-	public String showIndex() 
+	
+
+	@Autowired
+	ProductDAO productDao;
+
+	@RequestMapping(value="/",method=RequestMethod.GET)
+	public String showIndex(Model model) 
 	{
+		  model.addAttribute("pList",productDao.retrieveProduct());
 		return "welcome";
 
 	}
