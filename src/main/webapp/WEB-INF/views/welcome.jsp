@@ -40,7 +40,7 @@
 					
 					  <sec:authorize access="!isAuthenticated()">
                     <li role="presentation"><a href="login">Login </a></li>
-                    <li role="presentation"><a href="registration">Register </a></li>
+                    <li role="presentation"><a href="registeration">Register </a></li>
                      </sec:authorize>
                     <sec:authorize access="isAuthenticated()">
                  <li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
