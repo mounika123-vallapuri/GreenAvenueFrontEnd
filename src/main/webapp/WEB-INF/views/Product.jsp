@@ -7,13 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>product</title>
 </head>
-<body>
+<jsp:include page="header.jsp"></jsp:include>
+
+
+<body background="${pageContext.request.contextPath}/resources/images/Full-hd-Nature-Backgrounds-Free-Download.jpg">
 <h3>
 		<c:if test="${product.productId==0}">
-		       Add New Item
 	            </c:if>
 			<c:if test="${!empty product.productId}">
-		      Update Product for Id: <c:out value="${product.productId}" />
+		      <c:out value="${product.productId}" />
 				 
 			</c:if>
 			</h3>

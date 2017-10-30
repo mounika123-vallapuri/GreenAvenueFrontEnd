@@ -31,7 +31,7 @@ public class CartController
 	UserDAO userDAO;
 	
 
-	  @RequestMapping(value="addToCart/{id}")
+	 @RequestMapping(value="addToCart/{id}")
 	    public String addProductToCart(@PathVariable("id") int id, HttpSession session,Model model,RedirectAttributes attributes)
 	    {
 	    	int userId = (Integer) session.getAttribute("userid");
@@ -49,7 +49,7 @@ public class CartController
 				cartDAO.saveProductToCart(item);
 				attributes.addFlashAttribute("ExistingMessage",  p.getProductName() +"is already exist");
 		
-				return "redirect:/";
+				return "redirect:/cart	";
 			} else {
 				Cart item = new Cart();
 				Product p = productDao.getProduct(id);
@@ -61,12 +61,12 @@ public class CartController
 				item.setPrice(p.getPrice());
 				cartDAO.saveProductToCart(item);
 				attributes.addFlashAttribute("SuccessMessage", "Item"+p.getProductName()+" has been deleted Successfully");
-				return "redirect:/";
+				return "redirect:/cart";
 			}
 	    	
 	    }
 	   
-	  @RequestMapping("cart")
+	 @RequestMapping("cart")
 		public String viewCart(Model model, HttpSession session) {
 	    	
 			int userId = (Integer) session.getAttribute("userid");
@@ -81,8 +81,25 @@ public class CartController
 		//	model.addAttribute("HideOthers", "true");
 			return "cart";
 		}
+
+
 	
-	  @RequestMapping("editCart/{cartId}")
+	  @RequestMapping(value="removeCart/{cartId}")
+	  public String deleteorder(@PathVariable("cartId") int id, HttpSession session) {
+	  	cartDAO.removeCartById(id);
+	  	session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userid")));
+	  	return "redirect:/cart";
+	  }
+	  
+	  @RequestMapping("continue_shopping")
+	  public String continueshopping()
+	  {
+	  return "redirect:/";	
+	  
+	  }
+	  
+
+		@RequestMapping("editCart/{cartId}")
 		public String editorder(@PathVariable("cartId") int cartid, @RequestParam("quantity") int q, HttpSession session) {
 		
 			//int userId = (Integer) session.getAttribute("userid");
@@ -95,22 +112,4 @@ public class CartController
 			session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userid")));
 			return "redirect:/cart";
 		}
-	    
-	    
-	  
-	  @RequestMapping(value="removeCart/{cartId}")
-	  public String deleteorder(@PathVariable("cartId") int id, HttpSession session) {
-	  	cartDAO.removeCartById(id);
-	  	session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userid")));
-	  	return "redirect:/cart";
-	  }
-	  
-	  @RequestMapping("continue_shopping")
-	  public String continueshopping()
-	  {
-	  return "redirect:/";	
-
-	  }
-	  
-
 }

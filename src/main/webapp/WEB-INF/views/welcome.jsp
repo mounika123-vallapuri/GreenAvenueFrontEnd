@@ -14,7 +14,7 @@
   			<title>Green-Avenue</title>
 		</head>
 
-	<body>
+	<body background="${pageContext.request.contextPath}/resources/images/">
 	  
 	  	<nav id ="navbar-red" class="navbar-inverse"role="navigation">
 			

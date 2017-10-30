@@ -7,6 +7,10 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Category Page</title>
 	</head>
+	
+	<jsp:include page="header.jsp"></jsp:include>
+	
+	
 <body background="${pageContext.request.contextPath}/resources/images/6361417590588817441286486481_landscape-4.jpg">
 
 		<!-- <form action="AddCategory" method="post">-->

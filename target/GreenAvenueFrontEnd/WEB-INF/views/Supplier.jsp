@@ -7,6 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>supplier</title>
 </head>
+
+<jsp:include page="header.jsp"></jsp:include>
+
 	<body background="${pageContext.request.contextPath}/resources/images/Autumn-nature-backgrounds-wallpaper.jpg" >
 
 	   	<!-- <form action="AddSupplier" method="post">-->

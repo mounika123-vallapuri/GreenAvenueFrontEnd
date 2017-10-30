@@ -39,7 +39,7 @@
                         <th>Product</th>
                         <th>Quantity</th>
                         <th class="text-center">Price</th><th></th>
-                        <th class="text-center">Total</th>
+                        <th class="text-center">Subtotal</th>
                         <th> </th>
                     </tr>
                 </thead>
@@ -54,14 +54,15 @@
                        			  <a class="thumbnail pull-left" href="#"> <img src="/GreenAvenueFrontEnd/myImage/imageDisplay?id=${cart.productId}" style="height:100px;height: 100px" > </a>
                   	      		    <div class="media-body">
                             		    <h4 class="media-heading"><a href="#">${cart.productName}</a></h4>
-                                	 
+                                		
                              <!-- <span>Status: </span><span class="text-success"><strong>In Stock</strong></span> --> 
                             </div>
                         </div></td>
                         
                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                          
-                       <form action="editCart/${cart.cartId}">  <input type="text" class="form-control" id="exampleInputEmail1" name="quantity" value="${cart.productQuantity }" >
+                            <form action="editCart/${cart.cartId}">
+                            
+                       <input type="text" class="form-control" id="exampleInputEmail1" name="quantity" value="${cart.productQuantity }" >
                         
                         </form>
                         </td>
@@ -69,15 +70,6 @@
                         <td></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>${cart.subTotal}</strong></td>
                        
-                        
-                          <!--  <td class="col-sm-1 col-md-1">
-                        <a href="editCart/${cart.cartId }" type="button" class="btn btn-danger">
-                        <span class="glyphicon glyphicon-remove"></span> <button>Update</button>
-                        </a>
-                        
-                        </td>--> 
-                        
-                        
                         
                           <td class="col-sm-1 col-md-1">
                         <a href="removeCart/${cart.cartId }" type="button" class="btn btn-danger">
@@ -89,13 +81,13 @@
                           
                     </c:forEach>   
                           
-                    <tr>
+                    <!-- <tr>
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
                         <td><h5>Subtotal</h5></td>
                         <td class="text-right"><h5><strong>${cart.subTotal}</strong></h5></td>
-                    </tr>
+                    </tr> -->
                   <!--    <tr>
                         <td>   </td>
                         <td>   </td>
