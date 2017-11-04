@@ -71,7 +71,7 @@ public class HomeController {
 			String role="ROLE_USER";
 			for (GrantedAuthority authority : authorities) 
 			{
-			  
+				session.setAttribute("user", user);
 			     if (authority.getAuthority().equals(role)) 
 			     {
 			    	 session.setAttribute("UserLoggedIn", "true");
@@ -89,7 +89,7 @@ public class HomeController {
 			     }
 		}
 			
-			return "/welcome";
+			return "/home";
 		
 		}
 	    

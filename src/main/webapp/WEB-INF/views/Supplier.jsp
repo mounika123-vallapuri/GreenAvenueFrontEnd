@@ -71,7 +71,7 @@
 	</tr>
 	
 	<c:forEach items="${supplierList}" var="supplier">
-		<tr bgcolor="blue">
+		<tr bgcolor="cream">
 			<td>${supplier.supId}</td>
 			<td>${supplier.supName}</td>
 			<td>${supplier.supDesc}</td>
@@ -85,7 +85,9 @@
 	</c:forEach>
 
 </table>
+		</body>
 		
-
-</body>
 </html>
+
+
+<jsp:include page="footer.jsp"></jsp:include>

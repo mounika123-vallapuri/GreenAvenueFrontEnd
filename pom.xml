@@ -3,13 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com</groupId>
   <artifactId>GreenAvenueFrontEnd</artifactId>
-  
   <packaging>war</packaging>
+  
   <version>0.0.1-SNAPSHOT</version>
   <name>GreenAvenueFrontEnd Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-
   <dependency>
   <groupId>com</groupId>
   <artifactId>GreenAvenueBackend</artifactId>
@@ -21,8 +20,6 @@
     	<artifactId>jstl</artifactId>
     	<version>1.2</version>
 	</dependency>
-
-
 
 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->

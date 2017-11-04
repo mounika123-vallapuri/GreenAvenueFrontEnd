@@ -39,8 +39,8 @@
 			
 				<ul class="nav navbar-nav navbar-right">
 					
+					<!--  <li><a href="home">Home</a></li>-->
 					
-					<li><a href="Home"><i class="fa fa-home" aria-hidden="true"></i>HOME</a></li>
 					<li><a href="category">Category</a></li>
 					<li><a href="supplier">Supplier</a></li>
 					<li><a href="product">Product</a></li>

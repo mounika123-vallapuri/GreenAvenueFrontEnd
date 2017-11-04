@@ -6,16 +6,34 @@
   			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
- 
-			<title>Registration Page</title>
+ 			<title>Registration Page</title>
+ <style type="text/css">
+	.bs-example{
+    	margin: 0px;
+    }
+</style>
+
 	</head>
 	<body background="${pageContext.request.contextPath}/resources/images/Maldives-Summer-Wallpaper-HD.jpg">
-			<jsp:include page="header.jsp"></jsp:include>
+			
 		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<html>
-    <head>
-    </head>
-    <body>
+
+<div class="bs-example">
+    <nav id="myNavbar" class="navbar navbar-inverse" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Green-Avenue</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+           </nav>
+</div>
     <center>
         <h3>Welcome, Enter The User Details</h3>
         <form:form method="POST" action="saveUser" modelAttribute="user">
@@ -56,5 +74,5 @@
         </form:form>
 <center>
     </body>
-    
-</html></html>
+    <jsp:include page="footer.jsp"></jsp:include>
+</html>

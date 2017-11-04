@@ -2,6 +2,7 @@ com\spring\controller\CategoryController.class
 com\spring\controller\HomeController.class
 com\spring\controller\ProductController.class
 com\spring\controller\CartController.class
+com\spring\controller\CheckOutController.class
 com\spring\controller\IndexController.class
 com\spring\controller\SupplierController.class
 com\spring\controller\ImageController.class
