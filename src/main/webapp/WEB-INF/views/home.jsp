@@ -3158,6 +3158,15 @@ header {
 	padding: 30px 0px;
 }
 
+#be-the-first {
+  background: url(${pageContext.request.contextPath}/resources/images/flowers.jpg) #231f20 no-repeat center center fixed;
+  min-height: 300px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 hr.line {
 	width: 100%;
 	border: 2px solid;
@@ -3404,7 +3413,7 @@ footer {
 .btn-wide {
   width: 100%;
   font-size: 12.5px;
-  line-height: 1.33;
+  line-height: 1.33; 
   padding: 16px 13px;
   letter-spacing: 0px;
 }
@@ -3447,19 +3456,7 @@ footer {
 /* Large screens ----------- */
 @media (min-width: 1200px) and (max-width: 3000px) {
 
-}   
-
-
-
-
-
-
-
-
-
-
-
-
+}  
 
 </style>
 
@@ -3468,40 +3465,16 @@ footer {
 </head>
 
 <body>
-<!-- 
-    
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Green-Avenue</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <sec:authorize access="isAuthenticated()">
-                 <li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
-              
-                 <li role="presentation"><a href="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
-                  </sec:authorize>
-          </ul>
-        </div><!--/.navbar-collapse
-      </div>
-    </div>
-      -->   
-    <header>
+
+<header>
       <div class="container">
         <div class="row">
           <div class="col-xs-6">
             <a class="navbar-brand" href="#"><h2>Green-Avenue</h2></a>
           </div>
-           <div class="col-xs-6 signin text-right navbar-nav">
-<sec:authorize access="!isAuthenticated()"><h3><a href="<c:url value="j_spring_security_logout"/>">Logout</a>&nbsp;&nbsp;&nbsp;<a href="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></h3></sec:authorize>
-   
-          </div>
-        </div> 
-        
+     </div> 
+
+
         <div class="row header-info">
           <div class="col-sm-10 col-sm-offset-1 text-center">
             <h1 class="wow fadeIn">Decorate Your Home</h1>
@@ -3514,11 +3487,11 @@ footer {
               <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                 <div class="row">
                   <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
-                   <sec:authorize access="!isAuthenticated()"> <a href="login" class="btn btn-secondary btn-lg scroll">Login</a>
+                   <sec:authorize access="!isAuthenticated()"> <a href="<c:url value="j_spring_security_logout"/>" class="btn btn-secondary btn-lg scroll">Logout</a>
                  </sec:authorize>
                   </div>
                   <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
-<sec:authorize access="!isAuthenticated()">  <a href="registeration" class="btn btn-primary btn-lg scroll">Register</a>
+<sec:authorize access="!isAuthenticated()">  <a href="cart" class="btn btn-primary btn-lg scroll"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a>
                 </sec:authorize>
                   </div>
                 </div><!--End Button Row-->  
@@ -3529,202 +3502,25 @@ footer {
         </div>
       </div>
     </header>
+
     
     <div class="mouse-icon hidden-xs">
 				<div class="scroll"></div>
 			</div>
-    <!-- 
+    
     <section id="be-the-first" class="pad-xl">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2 text-center margin-30 wow fadeIn" data-wow-delay="0.6s">
-            <h2>Be the first</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipis.</p>
+            <a href="productsDisplayPage"><h2>PRODUCTS ARE AVAILABLE HERE</h2></a>
+      
           </div>
         </div>
-        
-        <div class="iphone wow fadeInUp" data-wow-delay="1s">
-	        <img src="images/flowers.jpg">
-        </div>
-      </div>
-    </section>
-    --->
-    <section id="main-info" class="pad-xl">
-	     <!--  	======================== -->
-	  	
-	  	  	
-	<c:forEach items="${pList}" var="product">
-   <div class="container">
-    <div class="row">
-         
-        <div class="col-md-4">
-              <div class="thumbnail">
-       <img src="/GreenAvenueFrontEnd/myImage/imageDisplay?id=${product.productId}" alt="" width="300" height="200"  alt="" class="img-responsive">
-                <div class="caption">
-                  <h4 class="pull-right">${product.price}</h4>
-                  <h4><a href="#">${product.productName}</a></h4>
-                  <p>${product.productDesc}</p>
-                </div>
-                <div class="ratings">
-                  <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                     (15 reviews)
-                  </p>
-                </div>
-                <div class="space-ten"></div>
-                <div class="btn-ground text-center">
-                   <form:form action="addToCart/${product.productId}" method="POST">
-                <button class="btn btn-default" type="submit">Add to cart</button>
-                </form:form>
-        <!--             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> Quick View</button>--->
-                </div>
               </div>
-            </div>
-    </c:forEach>  
-	
-        
-    </section>
-        
-        
-    <!--Pricing-->
-    <!-- 
-    <section id="pricing" class="pad-lg">
-      <div class="container">
-        <div class="row margin-40">
-          <div class="col-sm-8 col-sm-offset-2 text-center">
-            <h2 class="white">Pricing</h2>
-            <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.</p>
-          </div>
-        </div>
-        
-        <div class="row margin-50">
-          
-          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="1s">
-            <br />
-            <ul class="list-unstyled pricing-table text-center">
-    					<li class="headline"><h5 class="white">Personal</h5></li>
-    					<li class="price"><div class="amount">$5<small>/m</small></div></li>
-    					<li class="info">2 row section for you package information. You can include all details or icons</li>
-    					<li class="features first">Up To 25 Projects</li>
-    					<li class="features">10GB Storage</li>
-    					<li class="features">Other info</li>
-    					<li class="features last btn btn-secondary btn-wide"><a href="#">Get Started</a></li>
-    				</ul>
-          </div>
-          
-          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="0.4s">
-            <ul class="list-unstyled pricing-table active text-center">
-    					<li class="headline"><h5 class="white">Professional</h5></li>
-    					<li class="price"><div class="amount">$12<small>/m</small></div></li>
-    					<li class="info">2 row section for you package information. You can include all details or icons</li>
-    					<li class="features first">Up To 25 Projects</li>
-    					<li class="features">10GB Storage</li>
-    					<li class="features">Other info</li>
-    					<li class="features">Other info</li>
-    					<li class="features last btn btn-secondary btn-wide"><a href="#">Get Started</a></li>
-    				</ul>
-          </div>
-          
-          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="1.3s">
-            <br />
-            <ul class="list-unstyled pricing-table text-center">
-    					<li class="headline"><h5 class="white">Business</h5></li>
-    					<li class="price"><div class="amount">$24<small>/m</small></div></li>
-    					<li class="info">2 row section for you package information. You can include all details or icons</li>
-    					<li class="features first">Up To 25 Projects</li>
-    					<li class="features">10GB Storage</li>
-    					<li class="features">Other info</li>
-    					<li class="features last btn btn-secondary btn-wide"><a href="#">Get Started</a></li>
-    				</ul>
-          </div>
-          
-        </div>
-        
-      </div>
     </section>
     
     
-    <section id="invite" class="pad-lg light-gray-bg">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2 text-center">
-            <i class="fa fa-envelope-o margin-40"></i>
-            <h2 class="black">Get the invite</h2>
-            <br />
-            <p class="black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.</p>
-            <br />
-            
-            <div class="row">
-              <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                <form role="form">
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg">Request Invite</button>
-                </form>
-              </div>
-            </div><!--End Form row
-
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    
-    <section id="press" class="pad-sm">
-      <div class="container">
-        
-        <div class="row margin-30 news-container">
-          <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 wow fadeInLeft" data-wow-delay="0.8s">
-            <a href="#" target="_blank">
-            <img class="news-img pull-left" src="img/press-01.jpg" alt="Tech Crunch">
-            <p class="black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.<br /> 
-            <small><em>Tech Crunch - January 15, 2015</em></small></p>
-            </a>
-          </div>
-        </div>
-        
-        <div class="row margin-30 news-container">
-          <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 wow fadeInLeft" data-wow-delay="1.2s">
-            <a href="#" target="_blank">
-            <img class="news-img pull-left" src="img/press-02.jpg" alt="Forbes">
-            <p class="black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut. <br /> 
-            <small><em>Forbes - Feb 25, 2015</em></small></p>
-            </a>
-          </div>
-        </div>
-        
-      </div>
-    </section>
-    
-    <footer>
-      <div class="container">
-        
-        <div class="row">
-          <div class="col-sm-8 margin-20">
-            <ul class="list-inline social">
-              <li>Connect with us on</li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-          </div>
-          
-          <div class="col-sm-4 text-right">
-            <p><small>Copyright &copy; 2014. All rights reserved. <br>
-	            Created by <a href="http://visualsoldiers.com">Visual Soldiers</a></small></p>
-          </div>
-        </div>
-        
-      </div>
-    </footer>
-    
-     -->
-   <jsp:include page="footer.jsp"></jsp:include> 
+       <jsp:include page="footer.jsp"></jsp:include> 
     <!-- Javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

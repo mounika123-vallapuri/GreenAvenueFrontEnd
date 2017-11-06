@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
+    <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
 <html>
@@ -23,8 +25,45 @@ $( document ).ready(function() {
 	});
 });
 </script>
+
+<style type="text/css">
+	.bs-example{
+    	margin: 0px;
+    }
+</style>
+
 </head>
-<jsp:include page="header.jsp" /> 
+<nav id ="navbar-red" class="navbar-inverse"role="navigation">
+			
+			<div class="container-fluid">
+				<ul="nav navbar-nav">
+					<button type="button"class="navbar-toggle collapsed datatoggle="collapse"data target="bs-example-nav">
+						<span class="sr-only">toggle navigation</span>
+						<span class="icon_bar"></span>
+		
+						<span class="icon_bar"></span>
+					</button>
+				</ul>
+				
+			</div>
+		
+			<div class="collapse navbar-collapse"id=bs-example-nav>
+			<a class="navbar-brand" href="home">Green-Avenue</a>
+			
+				<ul class="nav navbar-nav navbar-right">
+					
+					<!--  <li><a href="home">Home</a></li>-->
+					
+			        <sec:authorize access="isAuthenticated()">
+                 <li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
+              
+                  </sec:authorize>
+	
+						
+				</ul>
+	  		</div>
+	  	</nav>
+ 
 <body>
 <div id="wrap">
 <div id="main" class="container clear-top">

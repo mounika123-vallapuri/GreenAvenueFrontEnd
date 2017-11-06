@@ -23,23 +23,39 @@
 <%-- <jsp:include page="showProduct.jsp" /> --%> 
 
 </head>
+<nav id ="navbar-red" class="navbar-inverse"role="navigation">
+			
+			<div class="container-fluid">
+				<ul="nav navbar-nav">
+					<button type="button"class="navbar-toggle collapsed datatoggle="collapse"data target="bs-example-nav">
+						<span class="sr-only">toggle navigation</span>
+						<span class="icon_bar"></span>
+		
+						<span class="icon_bar"></span>
+					</button>
+				</ul>
+				
+			</div>
+		
+			<div class="collapse navbar-collapse"id=bs-example-nav>
+			<a class="navbar-brand" href="home">Green-Avenue</a>
+			
+				<ul class="nav navbar-nav navbar-right">
+					
+					<!--  <li><a href="home">Home</a></li>-->
+					
+			        <sec:authorize access="isAuthenticated()">
+                 <li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
+              
+                  </sec:authorize>
+	
+						
+				</ul>
+	  		</div>
+	  	</nav>
+
+
 <body>
-<div class="bs-example">
-    <nav id="myNavbar" class="navbar navbar-inverse" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Green-Avenue</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-           </nav>
-</div>
 	
 	<div class="container">
     <div class="row">

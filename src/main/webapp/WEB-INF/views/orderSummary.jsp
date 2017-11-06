@@ -14,8 +14,44 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Order Summary</title>
+<style type="text/css">
+	.bs-example{
+    	margin: 0px;
+    }
+</style>
+
 </head>
-<jsp:include page="header.jsp" /> 
+<nav id ="navbar-red" class="navbar-inverse"role="navigation">
+			
+			<div class="container-fluid">
+				<ul="nav navbar-nav">
+					<button type="button"class="navbar-toggle collapsed datatoggle="collapse"data target="bs-example-nav">
+						<span class="sr-only">toggle navigation</span>
+						<span class="icon_bar"></span>
+		
+						<span class="icon_bar"></span>
+					</button>
+				</ul>
+				
+			</div>
+		
+			<div class="collapse navbar-collapse"id=bs-example-nav>
+			<a class="navbar-brand" href="home">Green-Avenue</a>
+			
+				<ul class="nav navbar-nav navbar-right">
+					
+					<!--  <li><a href="home">Home</a></li>-->
+					
+			        <sec:authorize access="isAuthenticated()">
+                 <li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
+              
+                  </sec:authorize>
+	
+						
+				</ul>
+	  		</div>
+	  	</nav>
+
 <body>
 <div id="wrap">
 <div id="main" class="container clear-top">

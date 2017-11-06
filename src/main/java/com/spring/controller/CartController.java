@@ -100,7 +100,7 @@ public class CartController
 	  @RequestMapping("continue_shopping")
 	  public String continueshopping()
 	  {
-	  return "redirect:/";	
+	  return "redirect:/productsDisplayPage";	
 	  
 	  }
 	  

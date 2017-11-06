@@ -93,7 +93,11 @@ public LinkedHashMap<Integer,String> getCategories()
 	}
 	
 
-	
+	@RequestMapping(value="productsDisplayPage", method = RequestMethod.GET)
+	public String showProductDetailPage(Model m){
+		m.addAttribute("pList", productDao.getAllProducts());
+		return "productsDisplayPage";
+	}
 
 	@RequestMapping(value="saveProduct",method = RequestMethod.POST)
 public String addItem(@ModelAttribute("product") Product p,@RequestParam("file") MultipartFile file,BindingResult result,HttpServletRequest request) throws IOException
