@@ -1664,9 +1664,12 @@ bs-example{
             
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
+							<button type="reset" value="reset" class="btn btn-warning">
+                                Cancel</button>
+                            <button type="submit" value="Submit" class="btn btn-primary">
+                                Submit</button>
                 
-                           <input type="submit" value="Submit"/>
-                               <!--  Submit</> -->
+                           
                         </div>
                     </div>
                 </fieldset>

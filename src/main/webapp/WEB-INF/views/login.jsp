@@ -578,17 +578,15 @@ input, button {
         </div>
         <div class="form-group">
 	<label for="code" class="col-xs-4 control-label"></label>
-		
-		<div class="col-xs-4">
-		
-			
-	
-		<input type="submit" value="Login" id="btn-add" class="btn btn-primary" >
-	
-	
-
-		
-		</div>
+		 <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+							
+                            <button type="submit" value="Login"  d="btn-add" class="btn btn-primary">
+                                Login</button>
+                
+                           
+                        </div>
+                    </div>
       </form>
       
       </div>

@@ -40,7 +40,7 @@ h1 {
   font-weight: 300;
   line-height:1em;
   text-align: center;
-  color: pink;
+  color:#17202A;
 }
 
 h2 {
@@ -50,13 +50,13 @@ h2 {
   display: block;
   line-height:1em;
   padding-bottom: 2em;
-  color: pink;
+  color:#17202A;
 }
 
 h2 a {
   font-weight: 700;
   text-transform: uppercase;
-  color: pink;
+  color:#17202A;
   text-decoration: none;
 }
 
@@ -67,7 +67,7 @@ h2 a {
 	  font-weight: bold;
 	  font-size: 1em;
   text-align: left;
-  color:pink;
+  color:#17202A ;
 }
 
 .container td {
@@ -95,29 +95,29 @@ h2 a {
 
 /* Background-color of the odd rows */
 .container tr:nth-child(odd) {
-	  background-color: #323C50;
+	  background-color:#EAEDED;
 }
 
 /* Background-color of the even rows */
 .container tr:nth-child(even) {
-	  background-color: #2C3446;
+	  background-color:#EAEDED;
 }
 
 .container th {
-	  background-color:lime;
+	  background-color:#A9DFBF ;
 }
 
-.container td:first-child { color:pink; }
+.container td:first-child { color:black; }
 
 .container tr:hover {
-   background-color: #464A52;
+   background-color:#AED6F1;
 -webkit-box-shadow: 0 6px 6px -6px #0E1119;
 	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
 	        box-shadow: 0 6px 6px -6px #0E1119;
 }
 
 .container td:hover {
-  background-color: #FFF842;
+  background-color: #AED6F1;
   color: #403E10;
   font-weight: bold;
   
